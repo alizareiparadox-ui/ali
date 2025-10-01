@@ -3,108 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>یاران امام زمان</title>
+  <title>سایت آزمایشی</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
-  <script>
-    // زمان شروع غیبت کبرا: 1 شوال 329 هجری قمری ≈ 9 ژوئیه 941 میلادی
-    const startDate = new Date('0941-07-09T00:00:00Z');
-
-    function updateTimer() {
-      const now = new Date();
-      const diff = now - startDate;
-
-      const seconds = Math.floor(diff / 1000);
-      const minutes = Math.floor(seconds / 60);
-      const hours = Math.floor(minutes / 60);
-      const days = Math.floor(hours / 24);
-      const years = Math.floor(days / 365.25);
-
-      const remainingDays = days % 365.25;
-      const remainingHours = hours % 24;
-      const remainingMinutes = minutes % 60;
-      const remainingSeconds = seconds % 60;
-
-      document.getElementById("ghaybat-timer").innerText =
-        `${years} سال، ${Math.floor(remainingDays)} روز، ${remainingHours} ساعت، ${remainingMinutes} دقیقه، ${remainingSeconds} ثانیه از آغاز غیبت کبرا گذشته است.`;
-    }
-
-    setInterval(updateTimer, 1000);
-  </script>
 </head>
 <body>
   <header class="hero">
     <div class="overlay">
-      <h1>یاران امام زمان (عج)</h1>
-      <p>هدف این پیج و مجموعه، کمک به ظهور آقاست</p>
+      <h1>این یک نسخه آزمایشی است</h1>
+      <p>فقط برای تست حذف بخش‌های قبلی</p>
     </div>
   </header>
 
   <main>
-    <!-- معرفی امام زمان -->
     <section class="card">
-      <h2>امام زمان (عج)</h2>
-      <p>امام مهدی (عج)، فرزند امام حسن عسکری (ع)، دوازدهمین امام شیعیان است. ایشان در سال ۲۵۵ هجری قمری در سامرا متولد شدند و پس از شهادت پدرشان، امامت را برعهده گرفتند. تولد ایشان مخفیانه بود و تنها برخی از خواص از آن مطلع شدند. امام زمان در دوران کودکی وارد غیبت صغرا شدند و پس از آن غیبت کبرا آغاز شد.</p>
+      <h2>بخش اول</h2>
+      <p>این متن آزمایشی است تا مطمئن شویم هیچ اثری از بیوگرافی امام جج باقی نمانده.</p>
     </section>
 
-    <!-- وظایف منتظران -->
     <section class="card">
-      <h2>وظایف منتظران</h2>
-      <ul>
-        <li>خودسازی و تقوا</li>
-        <li>دعای فرج و ارتباط قلبی با امام</li>
-        <li>شناخت امام زمان و نشر معارف ایشان</li>
-        <li>یاری مظلومان و مبارزه با فساد</li>
-        <li>آمادگی برای ظهور با عمل صالح</li>
-      </ul>
+      <h2>بخش دوم</h2>
+      <p>اگر این متن را می‌بینی یعنی تغییرات اعمال شده و نسخه‌ی قبلی جایگزین شده است.</p>
     </section>
 
-    <!-- غیبت صغرا و کبرا -->
     <section class="card">
-      <h2>غیبت صغرا و کبرا</h2>
-      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت. در این دوران، امام از طریق چهار نایب خاص با شیعیان ارتباط داشتند: عثمان بن سعید، محمد بن عثمان، حسین بن روح و علی بن محمد سمری. این دوران، مرحله‌ای گذرا بود که شیعیان را برای غیبت کامل آماده می‌کرد.</p>
-      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد. در این دوران، امام زمان به صورت مستقیم با مردم ارتباط ندارند. این غیبت، آزمونی بزرگ برای امت اسلامی است تا با حفظ ایمان، تقوا، و انتظار فعال، زمینه‌ساز ظهور باشند. وظیفه‌ی ما در این دوران، شناخت امام، ارتباط قلبی با ایشان، و تلاش برای اصلاح فردی و اجتماعی است.</p>
-      <div id="ghaybat-timer"></div>
-    </section>
-
-    <!-- تقویم ظهور -->
-    <section class="calendar-section">
-      <h2>تقویم ظهور (نمادین)</h2>
-      <p>در این تقویم، روزهایی که یادآور انتظار و آمادگی برای ظهور هستند، برجسته شده‌اند.</p>
-      <div class="calendar-grid">
-        <div class="day highlight">
-          <h3>جمعه</h3>
-          <p>روز دعا برای فرج امام زمان</p>
-        </div>
-        <div class="day">
-          <h3>نیمه شعبان</h3>
-          <p>ولادت امام زمان (عج)</p>
-        </div>
-        <div class="day highlight">
-          <h3>دعای عهد</h3>
-          <p>هر روز صبح، تجدید بیعت با امام</p>
-        </div>
-        <div class="day">
-          <h3>شب قدر</h3>
-          <p>شب نزول تقدیر و دعا برای ظهور</p>
-        </div>
-        <div class="day">
-          <h3>عید فطر</h3>
-          <p>دعای فرج در پایان ماه رمضان</p>
-        </div>
-        <div class="day highlight">
-          <h3>روز عرفه</h3>
-          <p>دعای امام حسین و یاد امام عصر</p>
-        </div>
-      </div>
+      <h2>بخش سوم</h2>
+      <p>بعد از تست موفق، می‌توانیم دوباره محتوای اصلی (معرفی امام زمان، وظایف منتظران، غیبت و تقویم) را بازگردانیم.</p>
     </section>
   </main>
 
   <footer>
-    <a href="https://www.instagram.com/yarane.emam.2" target="_blank" class="insta-link">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-      <span>@yarane.emam.2</span>
-    </a>
+    <p>نسخه آزمایشی - فقط برای تست</p>
   </footer>
 </body>
-  </html>
+</html>
