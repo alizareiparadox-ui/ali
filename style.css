@@ -1,39 +1,38 @@
 body {
   margin: 0;
   font-family: 'Vazirmatn', sans-serif;
-  background: #fdfdfd;
-  color: #003366;
+  background: #f7faff;
+  color: #002b5c;
   line-height: 1.9;
 }
 
-/* هدر با عکس */
+/* هدر */
 .hero {
-  background: url('https://copilot.microsoft.com/th/id/BCO.0b16b699-12ff-4d19-8774-508777487071.png') center/cover no-repeat;
+  background: linear-gradient(135deg, #004e92, #000428);
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .overlay {
-  background-color: rgba(0, 51, 102, 0.6);
-  color: white;
-  padding: 40px;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  color: white;
+}
+
+.overlay .icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .overlay h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 2px #000;
 }
 
 .overlay p {
   font-size: 1.2rem;
-  font-weight: 300;
+  opacity: 0.9;
 }
 
 /* کارت‌ها */
@@ -46,12 +45,11 @@ main {
 }
 
 .card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   padding: 25px;
   transition: transform 0.3s ease;
-  border-right: 5px solid #0077cc;
 }
 
 .card:hover {
@@ -59,10 +57,10 @@ main {
 }
 
 .card h2 {
-  color: #0055aa;
+  color: #004e92;
   margin-bottom: 12px;
   font-size: 1.4rem;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 2px solid #eee;
   padding-bottom: 5px;
 }
 
@@ -76,18 +74,21 @@ main {
 }
 
 /* تایمر */
-#ghaybat-timer {
+.timer-box {
   margin-top: 15px;
+  padding: 10px;
+  background: #004e92;
+  color: white;
+  border-radius: 8px;
   font-weight: bold;
-  color: #0077cc;
+  text-align: center;
 }
 
 /* تقویم */
 .calendar-section {
-  background-color: #eef6ff;
+  background: #eef6ff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .calendar-grid {
@@ -111,15 +112,9 @@ main {
 
 /* فوتر */
 footer {
-  background: #003366;
+  background: #000428;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-}
-
-/* واکنش‌گرا */
-@media (max-width: 600px) {
-  .overlay h1 { font-size: 1.8rem; }
-  .overlay p { font-size: 1rem; }
-  .card h2 { font-size: 1.2rem;[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/websila/irangolzar/tree/e441d78676b7283758eed3ebfc13bfc16f0d2dec/resources%2Fviews%2Fsearch.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")
+  }
