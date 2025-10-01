@@ -1,11 +1,11 @@
-/* فونت و پایه */
+/* فونت و زمینه */
 body {
   margin: 0;
   font-family: 'Vazirmatn', sans-serif;
   background-color: #fdfdfd;
   color: #003366;
   line-height: 1.9;
-  background-image: url('https://www.transparenttextures.com/patterns/papyrus.png'); /* بافت سنتی لطیف */
+  background-image: url('https://www.transparenttextures.com/patterns/papyrus.png');
 }
 
 /* هدر با تصویر هنری */
@@ -80,6 +80,7 @@ main {
   color: #555;
   direction: ltr;
   text-align: left;
+  font-size: 0.95rem;
 }
 
 /* تقویم ظهور */
@@ -93,11 +94,13 @@ main {
 .calendar-section h2 {
   color: #0055aa;
   margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .calendar-section p {
   color: #333;
   margin-bottom: 20px;
+  font-size: 1rem;
 }
 
 .calendar-grid {
@@ -146,12 +149,14 @@ footer {
 }
 
 .insta-link img {
-  width: 28px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
-  margin-left: 8px;
+  margin-left: 6px;
+  object-fit: contain;
 }
 
-/* واکنش‌گرایی */
+/* واکنش‌گرایی برای موبایل */
 @media (max-width: 600px) {
   .overlay h1 {
     font-size: 1.8rem;
@@ -165,7 +170,28 @@ footer {
     font-size: 1.2rem;
   }
 
+  .card p, .translate {
+    font-size: 0.9rem;
+  }
+
+  .calendar-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .calendar-section p {
+    font-size: 0.9rem;
+  }
+
+  .day h3 {
+    font-size: 1rem;
+  }
+
   .calendar-grid {
     grid-template-columns: 1fr;
+  }
+
+  .insta-link img {
+    width: 16px;
+    height: 16px;
   }
 }
