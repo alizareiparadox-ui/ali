@@ -8,11 +8,10 @@ body {
   background-image: url('https://www.transparenttextures.com/patterns/papyrus.png');
 }
 
-/* هدر با تصویر هنری */
+/* هدر */
 .hero {
   background: url('https://copilot.microsoft.com/th/id/BCO.0b16b699-12ff-4d19-8774-508777487071.png') center/cover no-repeat;
   height: 60vh;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,132 +86,4 @@ main {
   list-style-type: "⭐ ";
 }
 
-/* ترجمه انگلیسی */
-.translate {
-  font-style: italic;
-  color: #555;
-  direction: ltr;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-/* زمان‌سنج غیبت کبرا */
-#ghaybat-timer {
-  margin-top: 15px;
-  font-weight: bold;
-  color: #0077cc;
-  font-size: 1rem;
-}
-
-/* تقویم ظهور */
-.calendar-section {
-  background-color: #eef6ff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.calendar-section h2 {
-  color: #0055aa;
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-}
-
-.calendar-section p {
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 1rem;
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.day {
-  background-color: white;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-  border-right: 4px solid #ccc;
-}
-
-.day:hover {
-  transform: translateY(-5px);
-}
-
-.day h3 {
-  color: #0077cc;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-.day.highlight {
-  background-color: #d0eaff;
-  border-right: 4px solid #0077cc;
-}
-
-/* فوتر */
-footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-.insta-link {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-}
-
-.insta-link img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-left: 6px;
-  object-fit: contain;
-}
-
-/* واکنش‌گرایی برای موبایل */
-@media (max-width: 600px) {
-  .overlay h1 {
-    font-size: 1.8rem;
-  }
-
-  .overlay p {
-    font-size: 1rem;
-  }
-
-  .card h2 {
-    font-size: 1.2rem;
-  }
-
-  .card p, .translate, .card ul li {
-    font-size: 0.9rem;
-  }
-
-  .calendar-section h2 {
-    font-size: 1.2rem;
-  }
-
-  .calendar-section p {
-    font-size: 0.9rem;
-  }
-
-  .day h3 {
-    font-size: 1rem;
-  }
-
-  .calendar-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .insta-link img {
-    width: 16px;
-    height: 16px;
-  }
-}
+/*[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/websila/irangolzar/tree/e441d78676b7283758eed3ebfc13bfc16f0d2dec/resources%2Fviews%2Fsearch.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")
