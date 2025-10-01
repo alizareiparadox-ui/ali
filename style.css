@@ -75,12 +75,33 @@ main {
   color: #333;
 }
 
+.card ul {
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #444;
+  list-style-type: "⭐ ";
+}
+
+/* ترجمه انگلیسی */
 .translate {
   font-style: italic;
   color: #555;
   direction: ltr;
   text-align: left;
   font-size: 0.95rem;
+}
+
+/* زمان‌سنج غیبت کبرا */
+#ghaybat-timer {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0077cc;
+  font-size: 1rem;
 }
 
 /* تقویم ظهور */
@@ -170,7 +191,7 @@ footer {
     font-size: 1.2rem;
   }
 
-  .card p, .translate {
+  .card p, .translate, .card ul li {
     font-size: 0.9rem;
   }
 
