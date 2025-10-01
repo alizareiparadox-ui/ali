@@ -1,124 +1,241 @@
+/* پایه */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
   margin: 0;
   font-family: 'Vazirmatn', sans-serif;
-  background: #0a0a2a;
   color: #f0f8ff;
   line-height: 1.9;
   overflow-x: hidden;
+  background: #0a0f2a;
 }
 
-/* افکت پس‌زمینه */
-.stars, .twinkling, .shooting-star, .orb {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  display:block;
-  z-index:-1;
+/* پس‌زمینه: گرادینت متحرک + ستاره‌ها + اورب */
+.bg { position: fixed; inset: 0; z-index: -2; }
+.gradient {
+  position: absolute; inset: 0;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b1f3a);
+  background-size: 400% 400%;
+  animation: gradientBG 18s ease infinite;
+  opacity: 0.9;
 }
-.stars {
-  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.twinkling {
-  background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-  animation: moveStars 200s linear infinite;
-}
-@keyframes moveStars {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
-}
-.shooting-star {
-  background: linear-gradient(white, transparent);
-  width: 2px; height: 80px;
-  top: 20%; left: 50%;
-  animation: shoot 5s linear infinite;
-}
-@keyframes shoot {
-  0% { transform: translate(0,0) rotate(45deg); opacity: 1; }
-  100% { transform: translate(-400px,400px) rotate(45deg); opacity: 0; }
-}
-.orb {
-  width: 120px; height: 120px;
-  background: radial-gradient(circle, rgba(0,198,255,0.4), transparent);
+.stars { position: absolute; inset: 0; z-index: -1; }
+.stars span {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: #ffffff;
   border-radius: 50%;
-  animation: moveOrb 25s infinite alternate ease-in-out;
+  opacity: 0.7;
+  animation: twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+}
+/* پراکندگی ستاره‌ها */
+.stars span:nth-child(1) { top: 10%; left: 20%; }
+.stars span:nth-child(2) { top: 25%; left: 80%; }
+.stars span:nth-child(3) { top: 40%; left: 15%; }
+.stars span:nth-child(4) { top: 60%; left: 50%; }
+.stars span:nth-child(5) { top: 85%; left: 70%; }
+.stars span:nth-child(6) { top: 12%; left: 60%; }
+.stars span:nth-child(7) { top: 30%; left: 35%; }
+.stars span:nth-child(8) { top: 48%; left: 82%; }
+.stars span:nth-child(9) { top: 68%; left: 22%; }
+.stars span:nth-child(10) { top: 88%; left: 40%; }
+.stars span:nth-child(11) { top: 5%; left: 5%; }
+.stars span:nth-child(12) { top: 18%; left: 45%; }
+.stars span:nth-child(13) { top: 33%; left: 10%; }
+.stars span:nth-child(14) { top: 52%; left: 60%; }
+.stars span:nth-child(15) { top: 72%; left: 80%; }
+.stars span:nth-child(16) { top: 20%; left: 25%; }
+.stars span:nth-child(17) { top: 42%; left: 48%; }
+.stars span:nth-child(18) { top: 64%; left: 12%; }
+.stars span:nth-child(19) { top: 76%; left: 55%; }
+.stars span:nth-child(20) { top: 90%; left: 90%; }
+
+.orb {
+  position: absolute;
+  width: 160px; height: 160px;
+  right: 12%; top: 18%;
+  background: radial-gradient(circle, rgba(0,198,255,0.35), transparent 60%);
+  border-radius: 50%;
+  filter: blur(0.8px);
+  animation: moveOrb 22s infinite alternate ease-in-out;
 }
 @keyframes moveOrb {
-  from { transform: translate(0,0); }
-  to { transform: translate(250px, -200px); }
+  from { transform: translate(0, 0); }
+  to   { transform: translate(-120px, 80px); }
 }
 
 /* هدر */
 .hero {
-  height: 60vh;
+  min-height: 56vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px 16px;
 }
 .overlay {
   text-align: center;
-  color: white;
+  color: #fff;
 }
 .overlay .icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 2.6rem;
+  margin-bottom: 8px;
 }
 .overlay h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
 }
 .overlay p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  font-size: 1.05rem;
+  opacity: 0.92;
 }
 
 /* افکت تایپ‌ماشین */
 .typewriter {
   overflow: hidden;
-  border-right: .15em solid #00c6ff;
+  border-right: .12em solid #00c6ff;
   white-space: nowrap;
   margin: 0 auto;
-  letter-spacing: .1em;
+  letter-spacing: .04em;
   animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
 }
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #00c6ff; }
-}
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #00c6ff; } }
 
-/* کارت‌ها */
+/* کارت‌ها و بخش‌ها */
 main {
-  padding: 30px 20px;
+  padding: 28px 16px 40px;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
-  gap: 30px;
+  gap: 28px;
 }
 .card {
-  background: rgba(255,255,255,0.1);
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  padding: 25px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  padding: 22px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.35);
 }
 .card h2 {
   color: #00c6ff;
+  font-weight: 600;
   margin-bottom: 12px;
-  font-size: 1.4rem;
-  border-bottom: 2px solid rgba(255,255,255,0.2);
-  padding-bottom: 5px;
+  font-size: 1.25rem;
+  border-bottom: 2px solid rgba(255,255,255,0.16);
+  padding-bottom: 6px;
 }
-.card p, .card li {
-  color: #f0f8ff;
+.card p, .card li { color: #f0f8ff; }
+
+/* لیست */
+.card ul {
+  padding-right: 18px;
+  margin: 0;
 }
+.card ul li {
+  margin-bottom: 8px;
+}
+
+/* تقویم */
+.calendar-section {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 24px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+.day {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.day:hover { transform: translateY(-4px); }
+.day.highlight { background: rgba(0,198,255,0.15); }
 
 /* تایمر */
 .timer-box {
-  margin-top: [43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/websila/irangolzar/tree/e441d78676b7283758eed3ebfc13bfc16f0d2dec/resources%2Fviews%2Fsearch.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/bangarangler/theremake/tree/fbd250b5618c54f61983ef448a3fbcb615203871/remake-client%2Fsrc%2Fprojects%2Fpluaris.md?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")
+  margin-top: 14px;
+  padding: 12px;
+  background: #004e92;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  animation: pulse 1.7s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px #004e92; }
+  50% { box-shadow: 0 0 22px #00c6ff; }
+  100% { box-shadow: 0 0 0px #004e92; }
+}
+
+/* دکمه ادامه مطلب */
+.more-btn {
+  margin-top: 12px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.more-btn:hover { background: #009fd6; transform: translateY(-1px); }
+.more-btn:active { transform: translateY(0); }
+
+.hidden-text {
+  display: none;
+  margin-top: 10px;
+  line-height: 1.85;
+}
+
+/* اسکرول انیمیشن */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* فوتر */
+footer {
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  margin-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ریسپانسیو */
+@media (max-width: 600px) {
+  .overlay h1 { font-size: 1.7rem; }
+  .overlay p { font-size: 0.95rem; }
+  .card { padding: 18px; }
+  .calendar-grid { grid-template-columns: 1fr 1fr; }
+}
