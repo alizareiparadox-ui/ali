@@ -1,14 +1,12 @@
-/* فونت و پایه */
 body {
   margin: 0;
   font-family: 'Vazirmatn', sans-serif;
   background-color: #fdfdfd;
   color: #003366;
   line-height: 1.9;
-  background-image: url('https://www.transparenttextures.com/patterns/papyrus.png'); /* بافت سنتی لطیف */
+  background-image: url('https://www.transparenttextures.com/patterns/papyrus.png');
 }
 
-/* هدر با تصویر هنری */
 .hero {
   background: url('https://copilot.microsoft.com/th/id/BCO.0b16b699-12ff-4d19-8774-508777487071.png') center/cover no-repeat;
   height: 60vh;
@@ -21,38 +19,36 @@ body {
 .overlay {
   background-color: rgba(0, 51, 102, 0.6);
   color: white;
-  padding: 40px;
+  padding: 30px;
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 .overlay h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
   text-shadow: 1px 1px 2px #000;
 }
 
 .overlay p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
 }
 
-/* بخش‌های اصلی */
 main {
-  padding: 30px 20px;
+  padding: 25px 15px;
   max-width: 1000px;
   margin: auto;
   display: grid;
-  gap: 30px;
+  gap: 25px;
 }
 
-/* کارت‌ها */
 .card {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 25px;
+  padding: 20px;
   transition: transform 0.3s ease;
   border-right: 5px solid #0077cc;
 }
@@ -63,15 +59,15 @@ main {
 
 .card h2 {
   color: #0055aa;
-  margin-bottom: 12px;
-  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
   border-bottom: 1px dashed #ccc;
   padding-bottom: 5px;
 }
 
 .card p {
   margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #333;
 }
 
@@ -80,12 +76,12 @@ main {
   color: #555;
   direction: ltr;
   text-align: left;
+  font-size: 0.9rem;
 }
 
-/* تقویم ظهور */
 .calendar-section {
   background-color: #eef6ff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
@@ -93,17 +89,19 @@ main {
 .calendar-section h2 {
   color: #0055aa;
   margin-bottom: 10px;
+  font-size: 1.3rem;
 }
 
 .calendar-section p {
   color: #333;
   margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
 }
 
 .day {
@@ -121,8 +119,8 @@ main {
 
 .day h3 {
   color: #0077cc;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-size: 1rem;
 }
 
 .day.highlight {
@@ -130,42 +128,9 @@ main {
   border-right: 4px solid #0077cc;
 }
 
-/* فوتر */
 footer {
   background-color: #003366;
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
-}
-
-.insta-link {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-}
-
-.insta-link img {
-  width: 28px;
-  vertical-align: middle;
-  margin-left: 8px;
-}
-
-/* واکنش‌گرایی */
-@media (max-width: 600px) {
-  .overlay h1 {
-    font-size: 1.8rem;
-  }
-
-  .overlay p {
-    font-size: 1rem;
-  }
-
-  .card h2 {
-    font-size: 1.2rem;
-  }
-
-  .calendar-grid {
-    grid-template-columns: 1fr;
-  }
-}
+  margin-top: 40
