@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <script>
+    // تایمر غیبت کبرا
     const startDate = new Date('0941-07-09T00:00:00Z');
     function updateTimer() {
       const now = new Date();
@@ -16,16 +17,26 @@
       const hours = Math.floor(minutes / 60);
       const days = Math.floor(hours / 24);
       const years = Math.floor(days / 365.25);
-
       const remainingDays = days % 365.25;
       const remainingHours = hours % 24;
       const remainingMinutes = minutes % 60;
       const remainingSeconds = seconds % 60;
-
       document.getElementById("ghaybat-timer").innerText =
         `${years} سال، ${Math.floor(remainingDays)} روز، ${remainingHours} ساعت، ${remainingMinutes} دقیقه، ${remainingSeconds} ثانیه`;
     }
     setInterval(updateTimer, 1000);
+
+    // انیمیشن اسکرول
+    document.addEventListener("scroll", function() {
+      const elements = document.querySelectorAll(".scroll-animate");
+      const triggerBottom = window.innerHeight * 0.85;
+      elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          el.classList.add("show");
+        }
+      });
+    });
   </script>
 </head>
 <body>
@@ -38,31 +49,31 @@
   </header>
 
   <main>
-    <section class="card fade-in">
-      <h2 class="slide-in">امام زمان (عج)</h2>
-      <p>امام مهدی (عج)، فرزند امام حسن عسکری (ع)، دوازدهمین امام شیعیان است. ایشان در سال ۲۵۵ هجری قمری در سامرا متولد شدند و پس از شهادت پدرشان، امامت را برعهده گرفتند. تولد ایشان مخفیانه بود و تنها برخی از خواص از آن مطلع شدند. امام زمان در دوران کودکی وارد غیبت صغرا شدند و پس از آن غیبت کبرا آغاز شد.</p>
+    <section class="card scroll-animate">
+      <h2>امام زمان (عج)</h2>
+      <p>امام مهدی (عج)، فرزند امام حسن عسکری (ع)، دوازدهمین امام شیعیان است. ایشان در سال ۲۵۵ هجری قمری در سامرا متولد شدند و پس از شهادت پدرشان، امامت را برعهده گرفتند...</p>
     </section>
 
-    <section class="card fade-in">
-      <h2 class="slide-in">وظایف منتظران</h2>
+    <section class="card scroll-animate">
+      <h2>وظایف منتظران</h2>
       <ul>
-        <li>خودسازی و تقوا</li>
-        <li>دعای فرج و ارتباط قلبی با امام</li>
-        <li>شناخت امام زمان و نشر معارف ایشان</li>
-        <li>یاری مظلومان و مبارزه با فساد</li>
-        <li>آمادگی برای ظهور با عمل صالح</li>
+        <li>⭐ خودسازی و تقوا</li>
+        <li>⭐ دعای فرج و ارتباط قلبی با امام</li>
+        <li>⭐ شناخت امام زمان و نشر معارف ایشان</li>
+        <li>⭐ یاری مظلومان و مبارزه با فساد</li>
+        <li>⭐ آمادگی برای ظهور با عمل صالح</li>
       </ul>
     </section>
 
-    <section class="card fade-in">
-      <h2 class="slide-in">غیبت صغرا و کبرا</h2>
-      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت. در این دوران، امام از طریق چهار نایب خاص با شیعیان ارتباط داشتند. این دوران، مرحله‌ای گذرا بود که شیعیان را برای غیبت کامل آماده می‌کرد.</p>
-      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد. این غیبت، آزمونی بزرگ برای امت اسلامی است تا با حفظ ایمان، تقوا، و انتظار فعال، زمینه‌ساز ظهور باشند.</p>
+    <section class="card scroll-animate">
+      <h2>غیبت صغرا و کبرا</h2>
+      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت...</p>
+      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد...</p>
       <div id="ghaybat-timer" class="timer-box"></div>
     </section>
 
-    <section class="calendar-section fade-in">
-      <h2 class="slide-in">تقویم ظهور (نمادین)</h2>
+    <section class="calendar-section scroll-animate">
+      <h2>تقویم ظهور (نمادین)</h2>
       <div class="calendar-grid">
         <div class="day highlight"><h3>جمعه</h3><p>روز دعا برای فرج</p></div>
         <div class="day"><h3>نیمه شعبان</h3><p>ولادت امام زمان (عج)</p></div>
@@ -76,4 +87,4 @@
     <p>یاران امام زمان (عج) | @yarane.emam.2</p>
   </footer>
 </body>
-        </html>
+</html>
