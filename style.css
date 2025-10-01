@@ -28,11 +28,13 @@ body {
 .overlay h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  animation: fadeInDown 1.5s ease;
 }
 
 .overlay p {
   font-size: 1.2rem;
   opacity: 0.9;
+  animation: fadeIn 2s ease;
 }
 
 /* کارت‌ها */
@@ -53,7 +55,7 @@ main {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03) rotate(-1deg);
 }
 
 .card h2 {
@@ -64,6 +66,7 @@ main {
   padding-bottom: 5px;
 }
 
+/* لیست */
 .card ul {
   padding-right: 20px;
 }
@@ -82,6 +85,7 @@ main {
   border-radius: 8px;
   font-weight: bold;
   text-align: center;
+  animation: pulse 1.5s infinite;
 }
 
 /* تقویم */
@@ -103,6 +107,11 @@ main {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.day:hover {
+  transform: translateY(-5px);
 }
 
 .day.highlight {
@@ -117,4 +126,30 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  }
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px #004e92; }
+  50% { box-shadow: 0 0 20px #00c6ff; }
+  100% { box-shadow: 0 0 0px #004e92; }
+}
+
+/* کلاس‌های انیمیشن */
+.fade-in {
+  animation[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/websila/irangolzar/tree/e441d78676b7283758eed3ebfc13bfc16f0d2dec/resources%2Fviews%2Fsearch.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")
