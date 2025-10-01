@@ -7,13 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <script>
-    // زمان شروع غیبت کبرا: 9 ژوئیه 941 میلادی
     const startDate = new Date('0941-07-09T00:00:00Z');
-
     function updateTimer() {
       const now = new Date();
       const diff = now - startDate;
-
       const seconds = Math.floor(diff / 1000);
       const minutes = Math.floor(seconds / 60);
       const hours = Math.floor(minutes / 60);
@@ -26,15 +23,15 @@
       const remainingSeconds = seconds % 60;
 
       document.getElementById("ghaybat-timer").innerText =
-        `${years} سال، ${Math.floor(remainingDays)} روز، ${remainingHours} ساعت، ${remainingMinutes} دقیقه، ${remainingSeconds} ثانیه از آغاز غیبت کبرا گذشته است.`;
+        `${years} سال، ${Math.floor(remainingDays)} روز، ${remainingHours} ساعت، ${remainingMinutes} دقیقه، ${remainingSeconds} ثانیه`;
     }
-
     setInterval(updateTimer, 1000);
   </script>
 </head>
 <body>
   <header class="hero">
     <div class="overlay">
+      <div class="icon">🌙</div>
       <h1>یاران امام زمان (عج)</h1>
       <p>با هم برای ظهور آماده می‌شویم</p>
     </div>
@@ -59,9 +56,9 @@
 
     <section class="card">
       <h2>غیبت صغرا و کبرا</h2>
-      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت. در این دوران، امام از طریق چهار نایب خاص با شیعیان ارتباط داشتند: عثمان بن سعید، محمد بن عثمان، حسین بن روح و علی بن محمد سمری. این دوران، مرحله‌ای گذرا بود که شیعیان را برای غیبت کامل آماده می‌کرد.</p>
-      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد. در این دوران، امام زمان به صورت مستقیم با مردم ارتباط ندارند. این غیبت، آزمونی بزرگ برای امت اسلامی است تا با حفظ ایمان، تقوا، و انتظار فعال، زمینه‌ساز ظهور باشند. وظیفه‌ی ما در این دوران، شناخت امام، ارتباط قلبی با ایشان، و تلاش برای اصلاح فردی و اجتماعی است.</p>
-      <div id="ghaybat-timer"></div>
+      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت. در این دوران، امام از طریق چهار نایب خاص با شیعیان ارتباط داشتند. این دوران، مرحله‌ای گذرا بود که شیعیان را برای غیبت کامل آماده می‌کرد.</p>
+      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد. این غیبت، آزمونی بزرگ برای امت اسلامی است تا با حفظ ایمان، تقوا، و انتظار فعال، زمینه‌ساز ظهور باشند.</p>
+      <div id="ghaybat-timer" class="timer-box"></div>
     </section>
 
     <section class="calendar-section">
@@ -79,4 +76,4 @@
     <p>یاران امام زمان (عج) | @yarane.emam.2</p>
   </footer>
 </body>
-</html>
+                                     </html>
