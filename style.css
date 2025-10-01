@@ -1,34 +1,106 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #f0f0f0;
+  font-family: 'Vazirmatn', sans-serif;
+  background: #f9fafc;
   color: #222;
+  line-height: 1.8;
 }
 
 .hero {
-  background: #444;
+  background: linear-gradient(135deg, #004e92, #000428);
   color: white;
-  padding: 40px;
   text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 main {
-  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 20px;
   display: grid;
-  gap: 20px;
+  gap: 25px;
 }
 
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  color: #004e92;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.card ul {
+  padding-right: 20px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  list-style-type: "⭐ ";
+}
+
+#ghaybat-timer {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #004e92;
+}
+
+.calendar-section {
+  background: #eef6ff;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.day {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.day.highlight {
+  background: #d0eaff;
+  font-weight: bold;
 }
 
 footer {
-  background: #222;
+  background: #000428;
   color: white;
   text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+  .card h2 { font-size: 1.2rem; }
+  .card p, .card ul li { font-size: 0.9rem; }
 }
