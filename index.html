@@ -4,97 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>یاران امام زمان</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <script>
+    // تایمر غیبت کبرا
+    const startDate = new Date('0941-07-09T00:00:00Z');
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+      const seconds = Math.floor(diff / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const days = Math.floor(hours / 24);
+      const years = Math.floor(days / 365.25);
+      const remainingDays = days % 365.25;
+      const remainingHours = hours % 24;
+      const remainingMinutes = minutes % 60;
+      const remainingSeconds = seconds % 60;
+      document.getElementById("ghaybat-timer").innerText =
+        `${years} سال، ${Math.floor(remainingDays)} روز، ${remainingHours} ساعت، ${remainingMinutes} دقیقه، ${remainingSeconds} ثانیه`;
+    }
+    setInterval(updateTimer, 1000);
+
+    // انیمیشن اسکرول
+    document.addEventListener("scroll", function() {
+      const elements = document.querySelectorAll(".scroll-animate");
+      const triggerBottom = window.innerHeight * 0.85;
+      elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          el.classList.add("show");
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <!-- افکت پس‌زمینه -->
-  <div class="bg">
-    <div class="gradient"></div>
-    <div class="stars">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <div class="orb"></div>
-  </div>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
 
   <header class="hero">
     <div class="overlay">
-      <div class="icon" aria-hidden="true">🌙</div>
+      <div class="icon">🌙</div>
       <h1 class="typewriter">یاران امام زمان (عج)</h1>
       <p>با هم برای ظهور آماده می‌شویم</p>
     </div>
   </header>
 
   <main>
-    <!-- امام زمان -->
-    <section id="imam" class="card scroll-animate">
+    <section class="card scroll-animate">
       <h2>📖 امام زمان (عج)</h2>
-      <p>امام مهدی (عج)، فرزند امام حسن عسکری (ع)، دوازدهمین امام شیعیان است. ایشان آخرین حجت الهی و امید برپایی عدالت جهانی‌اند.</p>
-      <div id="more-imam" class="hidden-text" aria-hidden="true">
-        <p>ایشان در سال ۲۵۵ هجری قمری در سامرا متولد شدند و تولد ایشان به‌صورت مخفیانه بود. پس از شهادت پدر بزرگوارشان، امامت را برعهده گرفتند و در کودکی وارد غیبت صغرا شدند. در منابع معتبر شیعی، ویژگی‌ها و وظایف شیعیان نسبت به امام زمان (عج) به‌تفصیل بیان شده است.</p>
-        <p>شناخت امام، تجدید عهد، دعا برای فرج، یاری مظلومان، و تلاش برای گسترش عدالت از مهم‌ترین وظایف یاران واقعی ایشان است.</p>
-      </div>
-      <button class="more-btn" onclick="toggleText('more-imam', this)" aria-expanded="false" aria-controls="more-imam">ادامه مطلب ⬇️</button>
+      <p>امام مهدی (عج)، فرزند امام حسن عسکری (ع)، دوازدهمین امام شیعیان است...</p>
     </section>
 
-    <!-- وظایف منتظران -->
-    <section id="duties" class="card scroll-animate">
+    <section class="card scroll-animate">
       <h2>⭐ وظایف منتظران</h2>
       <ul>
         <li>خودسازی و تقوا</li>
         <li>دعای فرج و ارتباط قلبی با امام</li>
         <li>شناخت امام زمان و نشر معارف ایشان</li>
+        <li>یاری مظلومان و مبارزه با فساد</li>
+        <li>آمادگی برای ظهور با عمل صالح</li>
       </ul>
-      <div id="more-duties" class="hidden-text" aria-hidden="true">
-        <ul>
-          <li>یاری مظلومان و مبارزه با فساد</li>
-          <li>آمادگی برای ظهور با عمل صالح و مسئولیت‌پذیری اجتماعی</li>
-          <li>تقویت وحدت و همبستگی میان مسلمانان</li>
-          <li>رعایت اخلاق، عدالت، امانت‌داری و خدمت به مردم</li>
-        </ul>
-      </div>
-      <button class="more-btn" onclick="toggleText('more-duties', this)" aria-expanded="false" aria-controls="more-duties">ادامه مطلب ⬇️</button>
     </section>
 
-    <!-- غیبت صغرا و کبرا + تایمر -->
-    <section id="ghaybat" class="card scroll-animate">
+    <section class="card scroll-animate">
       <h2>🌌 غیبت صغرا و کبرا</h2>
-      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت و ارتباط با امام از طریق نواب خاص صورت می‌گرفت. پس از آن غیبت کبرا آغاز شد.</p>
-      <div id="more-ghaybat" class="hidden-text" aria-hidden="true">
-        <p>در دوران غیبت صغرا، چهار نایب خاص (عثمان بن سعید، محمد بن عثمان، حسین بن روح و علی بن محمد سمری) واسطه‌ی ارتباط میان امام و شیعیان بودند و به پرسش‌ها، مسائل دینی و راهنمایی‌ها پاسخ می‌دادند.</p>
-        <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد. در این دوران، امام نایب خاص ندارد و شیعیان موظف‌اند به فقها و علمای دین مراجعه کنند. این غیبت آزمونی بزرگ برای ایمان، صبر و انتظار فعال است.</p>
-        <p>فلسفه‌ی غیبت: حفظ جان امام از خطر دشمنان، آماده‌سازی جامعه برای پذیرش حکومت عدل جهانی، و امتحان مردم در پایبندی به حقیقت. منتظران واقعی با عمل صالح، یاری مظلومان و دعا برای فرج، زمینه‌ساز ظهور می‌شوند.</p>
-      </div>
-      <button class="more-btn" onclick="toggleText('more-ghaybat', this)" aria-expanded="false" aria-controls="more-ghaybat">ادامه مطلب ⬇️</button>
-
-      <div id="ghaybat-timer" class="timer-box" role="status" aria-live="polite"></div>
+      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت...</p>
+      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد...</p>
+      <div id="ghaybat-timer" class="timer-box"></div>
     </section>
 
-    <!-- تقویم نمادین -->
-    <section id="calendar" class="calendar-section scroll-animate">
+    <section class="calendar-section scroll-animate">
       <h2>📅 تقویم ظهور (نمادین)</h2>
       <div class="calendar-grid">
         <div class="day highlight"><h3>جمعه</h3><p>روز دعا برای فرج</p></div>
         <div class="day"><h3>نیمه شعبان</h3><p>ولادت امام زمان (عج)</p></div>
+        <div class="day highlight"><h3>دعای عهد</h3><p>هر روز صبح</p></div>
+        <div class="day"><h3>شب قدر</h3><p>دعا برای ظهور</p></div>
       </div>
-      <div id="more-calendar" class="hidden-text" aria-hidden="true">
-        <div class="calendar-grid">
-          <div class="day highlight"><h3>دعای عهد</h3><p>هر روز صبح</p></div>
-          <div class="day"><h3>شب قدر</h3><p>دعا برای ظهور</p></div>
-          <div class="day"><h3>اعیاد اسلامی</h3><p>تجدید بیعت و دعا</p></div>
-        </div>
-      </div>
-      <button class="more-btn" onclick="toggleText('more-calendar', this)" aria-expanded="false" aria-controls="more-calendar">ادامه مطلب ⬇️</button>
     </section>
   </main>
 
   <footer>
     <p>یاران امام زمان (عج) | @yarane.emam.2</p>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
