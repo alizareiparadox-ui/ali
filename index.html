@@ -1,90 +1,104 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>یاران امام زمان</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
-  <script>
-    // تایمر غیبت کبرا
-    const startDate = new Date('0941-07-09T00:00:00Z');
-    function updateTimer() {
-      const now = new Date();
-      const diff = now - startDate;
-      const seconds = Math.floor(diff / 1000);
-      const minutes = Math.floor(seconds / 60);
-      const hours = Math.floor(minutes / 60);
-      const days = Math.floor(hours / 24);
-      const years = Math.floor(days / 365.25);
-      const remainingDays = days % 365.25;
-      const remainingHours = hours % 24;
-      const remainingMinutes = minutes % 60;
-      const remainingSeconds = seconds % 60;
-      document.getElementById("ghaybat-timer").innerText =
-        `${years} سال، ${Math.floor(remainingDays)} روز، ${remainingHours} ساعت، ${remainingMinutes} دقیقه، ${remainingSeconds} ثانیه`;
-    }
-    setInterval(updateTimer, 1000);
-
-    // انیمیشن اسکرول
-    document.addEventListener("scroll", function() {
-      const elements = document.querySelectorAll(".scroll-animate");
-      const triggerBottom = window.innerHeight * 0.85;
-      elements.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          el.classList.add("show");
-        }
-      });
-    });
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پلنر کنکور - برنامه مطالعاتی</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay">
-      <div class="icon">🌙</div>
-      <h1>یاران امام زمان (عج)</h1>
-      <p>با هم برای ظهور آماده می‌شویم</p>
+    <div class="container">
+        <!-- هدر -->
+        <header>
+            <h1>📚 پلنر کنکور من</h1>
+            <div class="days-counter">
+                <span>🎯 روزهای مانده تا کنکور:</span>
+                <span id="countdown">---</span>
+            </div>
+        </header>
+
+        <!-- بخش دروس -->
+        <div class="subjects-grid">
+            <!-- زبان انگلیسی -->
+            <div class="subject-card">
+                <h2>🇬🇧 زبان انگلیسی</h2>
+                <div class="checklist">
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="grammar"> گرامر</label>
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="idioms"> اصطلاحات</label>
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="phrasal"> اصطلاحات و فریزال ورب</label>
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="vocab"> وکب</label>
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="test70"> ۷۰ تست آزمون</label>
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="notes"> مرور دفتر نکات و لغات</label>
+                    <label><input type="checkbox" class="task-check" data-subject="english" data-task="words1100"> ۱۱۰۰ لغت</label>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" id="progress-english"></div>
+                </div>
+                <span class="progress-text" id="progress-text-english">0% تکمیل شده</span>
+            </div>
+
+            <!-- عربی -->
+            <div class="subject-card">
+                <h2>🕌 عربی</h2>
+                <div class="checklist">
+                    <label><input type="checkbox" class="task-check" data-subject="arabic" data-task="arabic-study"> مطالعه عربی</label>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" id="progress-arabic"></div>
+                </div>
+                <span class="progress-text" id="progress-text-arabic">0% تکمیل شده</span>
+            </div>
+
+            <!-- ادبیات -->
+            <div class="subject-card">
+                <h2>📖 ادبیات</h2>
+                <div class="checklist">
+                    <label><input type="checkbox" class="task-check" data-subject="literature" data-task="literature-study"> مطالعه ادبیات</label>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" id="progress-literature"></div>
+                </div>
+                <span class="progress-text" id="progress-text-literature">0% تکمیل شده</span>
+            </div>
+
+            <!-- دینی -->
+            <div class="subject-card">
+                <h2>☪️ دینی</h2>
+                <div class="checklist">
+                    <label><input type="checkbox" class="task-check" data-subject="religious" data-task="religious-study"> مطالعه دینی</label>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" id="progress-religious"></div>
+                </div>
+                <span class="progress-text" id="progress-text-religious">0% تکمیل شده</span>
+            </div>
+
+            <!-- سلامت و بهداشت -->
+            <div class="subject-card">
+                <h2>🏥 سلامت و بهداشت</h2>
+                <div class="checklist">
+                    <label><input type="checkbox" class="task-check" data-subject="health" data-task="health-study"> مطالعه سلامت و بهداشت</label>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" id="progress-health"></div>
+                </div>
+                <span class="progress-text" id="progress-text-health">0% تکمیل شده</span>
+            </div>
+        </div>
+
+        <!-- پیشرفت کلی -->
+        <div class="overall-progress">
+            <h3>📊 پیشرفت کلی</h3>
+            <div class="progress overall">
+                <div class="progress-bar" id="progress-overall"></div>
+            </div>
+            <span class="progress-text" id="progress-text-overall">0% تکمیل شده</span>
+        </div>
+
+        <!-- دکمه ریست -->
+        <button id="reset-btn" class="reset-button">🔄 شروع روز جدید</button>
     </div>
-  </header>
 
-  <main>
-    <section class="card scroll-animate">
-      <h2>امام زمان (عج)</h2>
-      <p>امام مهدی (عج)، فرزند امام حسن عسکری (ع)، دوازدهمین امام شیعیان است. ایشان در سال ۲۵۵ هجری قمری در سامرا متولد شدند و پس از شهادت پدرشان، امامت را برعهده گرفتند...</p>
-    </section>
-
-    <section class="card scroll-animate">
-      <h2>وظایف منتظران</h2>
-      <ul>
-        <li>⭐ خودسازی و تقوا</li>
-        <li>⭐ دعای فرج و ارتباط قلبی با امام</li>
-        <li>⭐ شناخت امام زمان و نشر معارف ایشان</li>
-        <li>⭐ یاری مظلومان و مبارزه با فساد</li>
-        <li>⭐ آمادگی برای ظهور با عمل صالح</li>
-      </ul>
-    </section>
-
-    <section class="card scroll-animate">
-      <h2>غیبت صغرا و کبرا</h2>
-      <p>غیبت صغرا از سال ۲۶۰ تا ۳۲۹ هجری قمری ادامه داشت...</p>
-      <p>غیبت کبرا از سال ۳۲۹ هجری قمری آغاز شد و تا امروز ادامه دارد...</p>
-      <div id="ghaybat-timer" class="timer-box"></div>
-    </section>
-
-    <section class="calendar-section scroll-animate">
-      <h2>تقویم ظهور (نمادین)</h2>
-      <div class="calendar-grid">
-        <div class="day highlight"><h3>جمعه</h3><p>روز دعا برای فرج</p></div>
-        <div class="day"><h3>نیمه شعبان</h3><p>ولادت امام زمان (عج)</p></div>
-        <div class="day highlight"><h3>دعای عهد</h3><p>هر روز صبح</p></div>
-        <div class="day"><h3>شب قدر</h3><p>دعا برای ظهور</p></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>یاران امام زمان (عج) | @yarane.emam.2</p>
-  </footer>
+    <script src="script.js"></script>
 </body>
 </html>
