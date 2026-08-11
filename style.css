@@ -1,256 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --pink-light: #fff5f7;
-    --pink: #ffb6c1;
-    --pink-dark: #ff69b4;
-    --pink-deep: #db2777;
-    --white: #ffffff;
-    --text: #4a4a4a;
-    --shadow: 0 10px 30px rgba(219, 39, 119, 0.1);
 }
 
 body {
-    font-family: 'Vazirmatn', sans-serif;
-    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
-    min-height: 100vh;
-    padding: 20px;
-    direction: rtl;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #0f1117;
+    color: #fff;
+    line-height: 1.9;
+    padding-bottom: 40px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* هدر */
-header {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 30px;
+.hero {
     text-align: center;
-    margin-bottom: 30px;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
+    padding: 45px 20px;
+    background: linear-gradient(135deg, #111827, #3b0d0d);
+    border-bottom: 2px solid #ff3030;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--pink-dark), var(--pink-deep));
+.fire {
+    font-size: 55px;
 }
 
-header h1 {
-    color: var(--pink-deep);
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+.hero h1 {
+    font-size: 32px;
+    color: #ff4b4b;
 }
 
-.days-counter {
-    background: linear-gradient(135deg, var(--pink-dark), var(--pink-deep));
-    color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
+.hero p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.reason {
     display: inline-block;
-    font-size: 1.2rem;
-    box-shadow: 0 5px 15px rgba(219, 39, 119, 0.3);
+    margin-top: 15px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: #681414;
+    color: #ff8c8c;
+    font-weight: bold;
 }
 
-#countdown {
-    font-weight: 700;
-    margin-right: 5px;
-    font-size: 1.4rem;
-}
-
-/* کارت‌های دروس */
-.subjects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.subject-card {
-    background: var(--white);
-    border-radius: 20px;
+.progress-box {
+    max-width: 900px;
+    margin: 25px auto;
     padding: 25px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.subject-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(219, 39, 119, 0.2);
-    border-color: var(--pink);
-}
-
-.subject-card h2 {
-    color: var(--pink-deep);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--pink-light);
-    padding-bottom: 10px;
-}
-
-/* چک لیست */
-.checklist {
-    margin-bottom: 20px;
-}
-
-.checklist label {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    background: var(--pink-light);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    color: var(--text);
-}
-
-.checklist label:hover {
-    background: #ffe0e6;
-    transform: translateX(-5px);
-}
-
-.checklist input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    cursor: pointer;
-    accent-color: var(--pink-dark);
-    border-radius: 5px;
-}
-
-.checklist input[type="checkbox"]:checked + span {
-    text-decoration: line-through;
-    color: #999;
-}
-
-/* نوار پیشرفت */
-.progress {
-    width: 100%;
-    height: 12px;
-    background: #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 15px 0 10px;
-}
-
-.progress.overall {
-    height: 20px;
-    margin: 20px 0;
+    text-align: center;
+    background: #181c25;
+    border-radius: 20px;
 }
 
 .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--pink-dark), var(--pink-deep));
-    border-radius: 10px;
-    transition: width 0.5s ease;
-    width: 0%;
-    position: relative;
-}
-
-.progress-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-.progress-text {
-    font-size: 0.9rem;
-    color: var(--text);
-    display: block;
-    text-align: left;
-}
-
-/* پیشرفت کلی */
-.overall-progress {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: var(--shadow);
-    margin-bottom: 20px;
-}
-
-.overall-progress h3 {
-    color: var(--pink-deep);
-    margin-bottom: 15px;
-}
-
-/* دکمه ریست */
-.reset-button {
-    display: block;
     width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 15px;
-    background: linear-gradient(135deg, var(--pink-dark), var(--pink-deep));
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-family: 'Vazirmatn', sans-serif;
+    height: 18px;
+    background: #303541;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff3030, #ff9d00);
+    transition: .4s;
+}
+
+#progressText {
+    color: #ffb347;
+    font-weight: bold;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
+.day {
+    margin: 20px 0;
+    padding: 25px;
+    background: #191d26;
+    border-radius: 20px;
+    border-right: 6px solid #ff3d3d;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+.day h2 {
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.day ul {
+    list-style: none;
+}
+
+.day li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #222732;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+.day li:hover {
+    transform: translateX(-5px);
+}
+
+input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    margin-left: 8px;
+    accent-color: #ff4141;
+    vertical-align: middle;
+}
+
+label {
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(219, 39, 119, 0.3);
-    transition: all 0.3s ease;
 }
 
-.reset-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.4);
+input:checked + * {
+    text-decoration: line-through;
 }
 
-.reset-button:active {
-    transform: translateY(0);
+.goal {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #30240f;
+    color: #ffc45c;
 }
 
-/* ریسپانسیو */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
+.day2 {
+    border-color: #ff8c00;
+}
+
+.day3 {
+    border-color: #ffd21c;
+}
+
+.day4 {
+    border-color: #27d86f;
+}
+
+.exam {
+    border-color: #457cff;
+}
+
+.final-day {
+    border-color: #ff3030;
+    background: linear-gradient(145deg, #241414, #191d26);
+}
+
+.rules,
+.motivation {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.rules {
+    background: #241c0d;
+    border: 1px solid #8a6517;
+}
+
+.rules p {
+    margin: 8px 0;
+}
+
+.motivation {
+    text-align: center;
+    background: linear-gradient(145deg, #250e0e, #171923);
+    border: 1px solid #a51d1d;
+}
+
+.motivation h2 {
+    color: #ff4b4b;
+}
+
+.maede {
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: #351313;
+    color: #ffb1b1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.motivation h1 {
+    color: #ff4d4d;
+    font-size: 25px;
+}
+
+#reset {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #343944;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#reset:hover {
+    background: #555b69;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 25px;
     }
-    
-    .subjects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .subject-card {
-        padding: 20px;
-    }
-}
 
-/* انیمیشن تیک */
-.checklist input[type="checkbox"]:checked {
-    animation: tick-pop 0.3s ease;
-}
+    .hero p {
+        font-size: 15px;
+    }
 
-@keyframes tick-pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    .day {
+        padding: 18px;
+    }
+
+    .day h2 {
+        font-size: 18px;
+    }
+
+    .motivation h1 {
+        font-size: 20px;
+    }
 }
